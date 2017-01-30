@@ -19,4 +19,5 @@
 * receiving KAMEHAMEHA when CHARGE negates 3 lives
 * receiving KAMEHAMEHA when FIRE negates 2 lives
 * receiving KAMEHAMEHA when BLOCK negates 1 life
+* receiving KAMEHAMEHA when KAMEHAMEHA does not affect lives
 * none of the receiving actions affect saved charges
