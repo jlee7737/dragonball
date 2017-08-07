@@ -102,7 +102,7 @@ class Player(object):
 
         # enemy action result
         if enemy_action == 'KAMEHAMEHA':
-            self.lives -= 2
+            self.lives -= 1
 
 
     def charge(self, enemy_action):
