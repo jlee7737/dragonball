@@ -5,9 +5,13 @@ import time
 class DragonBall(object):
     '''
     DragonBall class defines game to run dragonball game.
+
+    Attr:
+        game_over (Bool): Repeat rounds until game_over is True.
+        round_count (Int): Keeps track of current round number.
     '''
 
-    game_over = 0
+    game_over = False
     round_count = 1
 
 
@@ -79,7 +83,7 @@ class DragonBall(object):
         time.sleep(1)
         
         if p1.lives <= 0 or p2.lives <= 0:
-            DragonBall.game_over = 1
+            DragonBall.game_over = True
             print ("                   GAME OVER!                     ")
             if p1.lives <= 0:
                 print ("{} wins!".format(p2.name))
@@ -93,11 +97,12 @@ class DragonBall(object):
         is met during round play.
 
         Game over condition:
-            Either player gets to less than or equal to 0 lives
+            Attr game_over is True when either player gets to less than 
+            or equal to 0 lives
         """
 
         self.print_title()
-        while DragonBall.game_over != 1:
+        while DragonBall.game_over == False:
             self.play_round()
             
 
