@@ -14,10 +14,10 @@ class Player(object):
         }
 
 
-    def __init__(self, name):
+    def __init__(self, name, lives, charges):
         self.name = name
-        self.lives = 3
-        self.charges = 0
+        self.lives = lives
+        self.charges = charges
         self.action_dispatcher = {
             'BLOCK': self.block, 
             'CHARGE': self.charge,
