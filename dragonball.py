@@ -35,6 +35,10 @@ class DragonBall(object):
 
 
     def print_title(self):
+        """
+        Print game title using player names.
+        """
+
         p1 = self.player1
         p2 = self.player2
 
@@ -49,6 +53,11 @@ class DragonBall(object):
 
 
     def play_round(self):
+        """
+        Plays new round. Each Player instance chooses action that effects 
+        their own and other Player instance's stats.
+        """
+
         p1 = self.player1
         p2 = self.player2
 
@@ -69,16 +78,24 @@ class DragonBall(object):
         print ("\n")
         time.sleep(1)
         
-        if p1.lives == 0 or p2.lives ==0:
+        if p1.lives <= 0 or p2.lives <= 0:
             DragonBall.game_over = 1
             print ("                   GAME OVER!                     ")
-            if p1.lives == 0:
+            if p1.lives <= 0:
                 print ("{} wins!".format(p2.name))
             else:
                 print ("{} wins!".format(p1.name))
 
 
     def start_game(self):
+        """
+        Starts Dragonball game. Rounds repeat until game_over condition 
+        is met during round play.
+
+        Game over condition:
+            Either player gets to less than or equal to 0 lives
+        """
+
         self.print_title()
         while DragonBall.game_over != 1:
             self.play_round()
