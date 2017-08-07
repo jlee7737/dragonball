@@ -30,8 +30,8 @@ class DragonBall(object):
         print("Hello Saiyans, welcome to Earth!")
         p1_name = input("Saiyan1, what is your name? ")
         p2_name = input("Saiyan2, what is your name? ")
-        p1 = Player(p1_name)
-        p2 = Player(p2_name)
+        p1 = Player(p1_name, 3, 0)
+        p2 = Player(p2_name, 3, 0)
 
         dragonball = DragonBall(p1, p2)
         
