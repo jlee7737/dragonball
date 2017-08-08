@@ -13,16 +13,16 @@ class Player(object):
         'k': 'KAMEHAMEHA',
         }
 
-
+    
     def __init__(self, name, lives, charges):
         self.name = name
         self.lives = lives
         self.charges = charges
         self.action_dispatcher = {
-            'BLOCK': self.block, 
-            'CHARGE': self.charge,
-            'FIRE': self.fire,
-            'KAMEHAMEHA': self.kamehameha,
+            'b': self.block, 
+            'c': self.charge,
+            'f': self.fire,
+            'k': self.kamehameha,
             }
 
 
@@ -59,9 +59,7 @@ class Player(object):
             
             action_is_valid = self.validate_input(action_input)
             
-        action = Player.action_dict[action_input]
-
-        return action
+        return action_input
 
 
     def validate_input(self, action_input):
@@ -101,7 +99,7 @@ class Player(object):
         # action result
 
         # enemy action result
-        if enemy_action == 'KAMEHAMEHA':
+        if enemy_action == 'k':
             self.lives -= 1
 
 
@@ -114,9 +112,9 @@ class Player(object):
         self.charges += 1
         
         # enemy action result
-        if enemy_action == 'FIRE':
+        if enemy_action == 'f':
             self.lives -= 1 
-        elif enemy_action == 'KAMEHAMEHA':
+        elif enemy_action == 'k':
             self.lives -= 3
 
 
@@ -129,7 +127,7 @@ class Player(object):
         self.charges -= 1
         
         # enemy action result
-        if enemy_action == 'KAMEHAMEHA':
+        if enemy_action == 'k':
             self.lives -= 2
 
 
