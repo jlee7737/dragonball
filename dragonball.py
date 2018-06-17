@@ -71,8 +71,12 @@ class DragonBall(object):
 
         p1_action = p1.play_action()
         p2_action = p2.play_action()
-        p1.action_dispatcher[p1_action](p2_action)
-        p2.action_dispatcher[p2_action](p1_action)
+
+        if p1.action == 'K' and p2.action == 'C':
+            p1.lives -= 1
+        
+        # p1.action_dispatcher[p1_action](p2_action)
+        # p2.action_dispatcher[p2_action](p1_action)
         
         print ("                 ...fighting...                 \n")
         time.sleep(1)

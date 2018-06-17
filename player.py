@@ -18,6 +18,7 @@ class Player(object):
         self.name = name
         self.lives = lives
         self.charges = charges
+        self.action = None
         self.action_dispatcher = {
             'b': self.block, 
             'c': self.charge,
@@ -58,6 +59,9 @@ class Player(object):
             action_input = getpass(" " + self.name + ", what's your move? \n")
             
             action_is_valid = self.validate_input(action_input)
+
+        # sets the action on the player    
+        self.action = action_dispatcher.get(action_input)
             
         return action_input
 
@@ -95,9 +99,9 @@ class Player(object):
         """
         Player's BLOCK action.
         """
-
+        
         # action result
-
+        
         # enemy action result
         if enemy_action == 'k':
             self.lives -= 1
@@ -107,7 +111,7 @@ class Player(object):
         """
         Player's CHARGE action.
         """
-
+        
         # action result
         self.charges += 1
         
@@ -122,7 +126,7 @@ class Player(object):
         """
         Player's FIRE action.
         """
-
+        
         # action result
         self.charges -= 1
         
@@ -135,7 +139,7 @@ class Player(object):
         """
         Player's KAMEHAMEHA action.
         """
-
+        
         # action result
         self.charges -= 3
         

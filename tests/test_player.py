@@ -16,33 +16,20 @@ class TestPlayer(unittest.TestCase):
 
 	# test_block_<enemy_action>
 	#.........................................................................#
-	def test_block_BLOCK(self):
+	def test_block_not_k(self):
 		instance = self._makeOne()
-		instance.block('BLOCK')
+		test_enemy_action = 'b' # b is BLOCK
+		instance.block(test_enemy_action)
 
-		expected = 3
-		self.assertEquals(instance.lives, expected)
+		expected_lives = 3
+		self.assertEquals(instance.lives, expected_lives)
 
-	def test_block_CHARGE(self):
+	def test_block_k(self):
 		instance = self._makeOne()
-		instance.block('CHARGE')
+		instance.block('k')
 
-		expected = 3
-		self.assertEquals(instance.lives, expected)
-
-	def test_block_FIRE(self):
-		instance = self._makeOne()
-		instance.block('FIRE')
-
-		expected = 3
-		self.assertEquals(instance.lives, expected)
-
-	def test_block_KAMEHAMEHA(self):
-		instance = self._makeOne()
-		instance.block('KAMEHAMEHA')
-
-		expected = 2
-		self.assertEquals(instance.lives, expected)
+		expected_lives = 2
+		self.assertEquals(instance.lives, expected_lives)
 
 
 	# test_charge_<enemy_action>
